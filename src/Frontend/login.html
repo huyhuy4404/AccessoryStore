@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../Frontend/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../Frontend/css/bootstrap-icons-1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../Frontend/css/style.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-lg-6"></div>
+        <div class="col-lg-6">
+            <div class="wrapper">
+                <div class=" ">
+                    <h2 class="title">Chào mừng quay trở lại</h2>
+                    <div ng-if="!isLoggedIn">
+                        <form id="form">
+                            <label class="ipTitle" for="txtIDAccount">Tên tài khoản (*)</label><br>
+                            <input class="ipText" type="text" placeholder="Tên tài khoản" required><br>
+                            <p class="messError text-danger d-none">
+                                Tên tài khoản không hợp lệ
+                            </p>
+                    </div>
+                    <div>
+                        <label class="ipTitle" for="txtPassword">Mật khẩu (*)</label><br>
+                        <input class="ipText" type="password" ng-model="user.password" placeholder="Mật khẩu"
+                            minlength="6" name="txtPassword" class="mt-2 mb-2" required><br>
+                    </div>
+                    <div class="form-text text-danger d-none"
+                        ng-show="loginForm.txtPassword.$touched && loginForm.txtPassword.$invalid">
+                        Password phải có ít nhất 6 ký tự
+                    </div>
+                    <div>
+                        <a href="">Quên mật khẩu?</a><br>
+                        <button type="submit" class=" btnLogin">Đăng nhập</button>
+                        <div class="messError text-danger d-none">
+                            {{loginError}}
+                        </div>
+                        <div class="messError text-success d-none" ng-show="loginSuccess">
+                            {{loginSuccess}}
+                        </div>
+
+                        <p class="qAccount">Bạn chưa có tài khoản? <a href=""> Đăng ký</a></p>
+                    </div>
+                    </form>
+                </div>
+                <!-- Kiểm tra nếu người dùng đã đăng nhập -->
+            </div>
+        </div>
+    </div>
+    <script src="../js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
