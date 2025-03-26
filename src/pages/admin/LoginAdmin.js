@@ -1,27 +1,24 @@
 import { useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function LoginAdmin() {
+  const { handleLogin
+    // , errorMessage 
+  } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
-  const [username, setUsername] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [verificationCode, setVerificationCode] = useState("");
-  const [sentCode, setSentCode] = useState(false);
+  // const [confirmPassword, setConfirmPassword] = useState("");
+  // const [verificationCode, setVerificationCode] = useState("");
+  // const [sentCode, setSentCode] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    if (username === "admin" && password === "123456") {
-      alert("Đăng nhập thành công!");
-      navigate("/admin");
-    } else {
-      alert("Sai tài khoản hoặc mật khẩu!");
-    }
+    await handleLogin(identifier, password,navigate);
   };
-
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 background-web">
       <div
@@ -50,14 +47,14 @@ function LoginAdmin() {
               {/* Form Đăng nhập */}
               <div className="flip-card-front">
                 <h3 className="text-center">Admin Login</h3>
-                <form onSubmit={handleLogin}>
+                <form onSubmit={onSubmit}>
                   <div className="mb-3">
-                    <label className="form-label">Username</label>
+                    <label className="form-label">Username or Email</label>
                     <input
                       type="text"
                       className="form-control"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
+                      value={identifier}
+                      onChange={(e) => setIdentifier(e.target.value)}
                       required
                       placeholder="Enter your username"
                     />
