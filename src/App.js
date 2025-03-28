@@ -6,7 +6,8 @@ import Users from "./pages/admin/Users";
 import Home from "./pages/customer/Home";
 import Products from "./pages/customer/Products";
 import LoginAdmin from "./pages/admin/LoginAdmin";
-
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <Router>
