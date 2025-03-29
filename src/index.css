@@ -1,15 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Roboto Mono', monospace;
 }
 .active-login {
   background-color: #b3c6e6;
@@ -87,4 +85,46 @@ code {
 .form-control:focus {
   border-color: #ff4b2b;
   box-shadow: 0 0 5px rgba(255, 75, 43, 0.5);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #F5F0E1;
+}
+.logo-header{
+  max-width: 100%;
+  height: auto;
+  width: 180px;
+}
+.page-header{
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+.page-header .nav-link:hover {
+  color: #fff;
+  background-color: #b4dcbe;
+  border-radius: 10px;
+}
+.navbar {
+  width: 100%;
+}
+
+.navbar-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+.nav-link {
+  color: black;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+.navbar-toggler {
+  border: none;
+  background: transparent;
 }

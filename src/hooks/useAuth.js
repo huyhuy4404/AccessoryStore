@@ -14,7 +14,7 @@ export const useAuth = () => {
       });
 
       console.log("✅ Đăng nhập thành công:", response.data);
-      navigate("/admin"); // Chuyển hướng sau khi đăng nhập
+      navigate("/admin");
     } catch (error) {
       setErrorMessage(error.response?.data?.message || "Sai tài khoản hoặc mật khẩu!");
     }
